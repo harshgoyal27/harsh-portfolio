@@ -1,4 +1,4 @@
-# Harsh Goyal — Developer & Designer Portfolio
+# Rishik Kumar Singh — Developer & Designer Portfolio
 
 A dark-themed personal portfolio for **Harsh Goyal** — Computer Science graduate from NSUT, currently a Content R&D Trainee at PhysicsWallah. Focused on UI/UX, front-end development, and GenAI integration.
 
