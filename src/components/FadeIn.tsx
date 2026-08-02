@@ -12,6 +12,15 @@ interface FadeInProps {
   style?: React.CSSProperties;
 }
 
+const motionCache = new Map<ElementType, any>();
+
+const getMotionComponent = (as: ElementType) => {
+  if (!motionCache.has(as)) {
+    motionCache.set(as, motion.create(as));
+  }
+  return motionCache.get(as);
+};
+
 const FadeIn = ({
   children,
   delay = 0,
@@ -22,8 +31,7 @@ const FadeIn = ({
   className,
   style,
 }: FadeInProps) => {
-  // motion.create() supports dynamic element types in framer-motion v12
-  const MotionComponent = motion.create(as);
+  const MotionComponent = getMotionComponent(as);
 
   return (
     <MotionComponent

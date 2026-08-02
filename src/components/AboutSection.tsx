@@ -3,7 +3,7 @@ import ContactButton from './ContactButton';
 import AnimatedText from './AnimatedText';
 
 const ABOUT_TEXT =
-  "I'm a Computer Science graduate from NSUT, currently a Content R&D Trainee at PhysicsWallah, where I help ship live, customer-facing learning products. I focus on UI/UX, front-end development, and GenAI integration — turning rough ideas into clean, engaging digital experiences. Let's build something incredible together!";
+  "I'm a B.Tech student in KIIT Unversity on VLSI Design with a deep interest in how chips thinkand how intelligent hardware is shaping the future. My work lies at the intersection of VLSI design, embedded systems, and machine learning because I believe the next generation of technology needs engineers who understand both hardware and AI. My toolkit includes embedded C, Python, and EDA tools, working from transistor-level concepts to AI.I'm actively exploring opportunities in chip verification and intelligent hardware.";
 
 const AboutSection = () => {
   return (
@@ -99,20 +99,24 @@ const AboutSection = () => {
                       <div className="flex flex-col gap-5 sm:gap-6">
                         {[
                           {
-                            label: 'Languages',
-                            items: ['Python', 'JavaScript', 'HTML', 'CSS', 'SQL'],
+                            label: 'Frontend',
+                            items: ['React/Next.js', 'JavaScript', 'HTML', 'CSS', 'SQL', 'TypeScript'],
                           },
                           {
-                            label: 'Frameworks & Libraries',
-                            items: ['React', 'Tailwind', 'Pandas', 'NumPy', 'Scikit-learn', 'NLTK'],
+                            label: 'Backend',
+                            items: ['Node.js/Express', 'Python/OpenCV', 'pandas', 'NumPy'],
                           },
                           {
-                            label: 'Tools & Platforms',
-                            items: ['Figma', 'Vercel', 'Git', 'GitHub', 'Power BI', 'Canva', 'Excel'],
+                            label: 'DevOps & Tools',
+                            items: ['Figma', 'Git', 'GitHub' , 'Canva', 'Excel'],
                           },
                           {
                             label: 'AI & GenAI',
-                            items: ['Gemini', 'Claude', 'OpenAI', 'Prompt engineering'],
+                            items: ['Gemini', 'Claude', 'OpenAI', 'Antigravity'],
+                          },
+                         {
+                            label: 'VLSI',
+                            items: ['RTL Design', 'Verilog/VHDL', 'Circuit Design', 'Xilinx'],
                           },
                         ].map((group) => (
                           <div

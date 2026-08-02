@@ -10,6 +10,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {
@@ -51,4 +55,11 @@ body {
 img {
   -webkit-user-drag: none;
   user-select: none;
+}
+
+/* Hide default cursor on desktop screens for a custom cursor experience */
+@media (hover: hover) and (pointer: fine) {
+  html, body, a, button, [role="button"], input, select, textarea, .hoverable {
+    cursor: none !important;
+  }
 }
