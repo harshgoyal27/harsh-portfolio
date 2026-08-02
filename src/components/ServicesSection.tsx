@@ -1,36 +1,36 @@
+import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
-
 
 const SERVICES = [
   {
     number: '01',
-    title: 'UI/UX Design',
+    title: 'VLSI Design',
     description:
-      'Designing clean, intuitive interfaces that prioritise user flow, hierarchy, and visual clarity — turning ideas into experiences people actually enjoy using.',
+      'Designing efficient digital circuits and semiconductor systems using Verilog, FPGA, and CMOS concepts — focused on performance, optimization, and hardware reliability.',
   },
   {
     number: '02',
-    title: 'Front-end Development',
+    title: 'Embedded systems',
     description:
-      'Building responsive, performant web apps with React, TypeScript, and Tailwind — pixel-perfect on every screen, deployed seamlessly on Vercel.',
+      'Building microcontroller-based systems with Arduino, ESP32, and sensors for automation, robotics, and real-time applications.',
   },
   {
     number: '03',
-    title: 'GenAI Integration',
+    title: 'Digital Signal Processing ',
     description:
-      'Wiring large language models into real products via Gemini, Claude, and OpenAI APIs — from resume reviewers to AI tutors and beyond.',
+      'Working on signal analysis, filtering, and communication systems using MATLAB and DSP techniques for modern electronic applications.',
   },
   {
     number: '04',
-    title: 'Prompt Engineering & LLM Automation',
+    title: 'PCB & Hardware Design',
     description:
-      'Crafting reliable prompts and automation flows that turn LLMs into production-grade tools for content, analysis, and decision support.',
+      'Designing circuit layouts, interfacing modules, and developing hardware prototypes for IoT, robotics, and embedded electronics projects.',
   },
   {
     number: '05',
-    title: 'Data Analysis & Visualization',
+    title: 'FPGA Development',
     description:
-      'Exploring datasets with Python (Pandas, NumPy, Seaborn) and Power BI — turning raw numbers into clear insights and dashboards stakeholders can act on.',
+      'Implementing and testing high-speed digital systems on FPGA platforms with simulation and verification workflows.',
   },
 ];
 
@@ -51,16 +51,23 @@ const ServicesSection = () => {
 
       <div className="mx-auto max-w-5xl">
         {SERVICES.map((service, i) => (
-          <FadeIn key={service.number} delay={i * 0.1} y={30}>
-            <div
-              className="flex flex-row items-start gap-6 sm:gap-10 md:gap-14 py-8 sm:py-10 md:py-12"
-              style={{
-                borderTop: '1px solid rgba(12, 12, 12, 0.15)',
-                ...(i === SERVICES.length - 1
-                  ? { borderBottom: '1px solid rgba(12, 12, 12, 0.15)' }
-                  : {}),
-              }}
-            >
+          <FadeIn key={service.number} delay={i * 0.15} y={35}>
+            <div className="relative flex flex-row items-start gap-6 sm:gap-10 md:gap-14 py-8 sm:py-10 md:py-12">
+              
+              {/* Staggered left-to-right line draw reveal on TOP border */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{
+                  delay: i * 0.18,
+                  duration: 1.2,
+                  ease: [0.16, 1, 0.3, 1], // Custom premium ease-out cubic
+                }}
+                style={{ transformOrigin: 'left' }}
+                className="absolute top-0 left-0 w-full h-[1px] bg-[#0C0C0C]/15"
+              />
+
               <div
                 className="shrink-0 font-black text-[#0C0C0C] leading-none"
                 style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
@@ -86,6 +93,23 @@ const ServicesSection = () => {
                   {service.description}
                 </p>
               </div>
+
+              {/* For the last item: Staggered bottom border draw reveal */}
+              {i === SERVICES.length - 1 && (
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{
+                    delay: (i + 1) * 0.18,
+                    duration: 1.2,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  style={{ transformOrigin: 'left' }}
+                  className="absolute bottom-0 left-0 w-full h-[1px] bg-[#0C0C0C]/15"
+                />
+              )}
+
             </div>
           </FadeIn>
         ))}
